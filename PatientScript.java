@@ -6,26 +6,26 @@ public class PatientScript {
 	}
  
 	public void launch() {
-	PatientImpl patientListStart = null;
+	DoublyLinkedListImpl<String> start = null;
 
-	PatientImpl firstPatient = new PatientImpl("John", 33, "Tuberculosis");
-	patientListStart = firstPatient;
+	DoublyLinkedListImpl<String> firstEmpl = new DoublyLinkedListImpl<String>("John");
+	start = firstEmpl;
+	
+	DoublyLinkedListImpl<String> secondEmpl = new DoublyLinkedListImpl<String>("Paul");
+	start.add(secondEmpl);
 
-	PatientImpl secondPatient = new PatientImpl("Mary", 66, "Meningitis");
-	patientListStart.addPatient(secondPatient);
+	DoublyLinkedListImpl<String> thirdEmpl = new DoublyLinkedListImpl<String>("Mary");
+	start.add(thirdEmpl);
 
-	PatientImpl thirdPatient = new PatientImpl("Tom", 90, "Cancer");
-	patientListStart.addPatient(thirdPatient);
+	DoublyLinkedListImpl<String> forthEmpl = new DoublyLinkedListImpl<String>("Anna");
+	start.add(forthEmpl);
 
-	PatientImpl forthPatient = new PatientImpl("Dying", 100, "Brain Cancer");
-	patientListStart.addPatient(forthPatient);
+	DoublyLinkedListImpl<String> fifthEmpl = new DoublyLinkedListImpl<String>("Tom");
+	start.add(fifthEmpl);
 
-	PatientImpl fifthPatient = new PatientImpl("Baby", 3, "Fever");
-	patientListStart.addPatient(fifthPatient);
+	start.delete(secondEmpl);
 
-	patientListStart.deletePatient(secondPatient);
-
-	patientListStart.traverseForward(patientListStart);
-	patientListStart.traverseBackward(fifthPatient);
+	start.traverseForward(start);
+	start.traverseBackward(fifthEmpl);
 	}
 }	
